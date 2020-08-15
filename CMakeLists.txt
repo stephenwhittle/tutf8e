@@ -6,8 +6,9 @@ project(tutf8e)
 
 set(CMAKE_C_FLAGS "-Os -Wall")
 
-include_directories(include)
 add_library(tutf8e STATIC src/tutf8e.c)
+target_include_directories(tutf8e PUBLIC include)
+
 set_property(TARGET tutf8e PROPERTY C_STANDARD 99)
 set_property(TARGET tutf8e PROPERTY C_EXTENSIONS OFF)
 
